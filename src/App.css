@@ -4,7 +4,6 @@
   flex-direction: column;
 }
 
-/* Navbar */
 .navbar {
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   color: white;
@@ -59,7 +58,6 @@
   color: #667eea;
 }
 
-/* Main Container */
 .main-container {
   flex: 1;
   max-width: 1400px;
@@ -68,7 +66,6 @@
   padding: 2rem;
 }
 
-/* Loading Spinner */
 .loading-container {
   display: flex;
   justify-content: center;
@@ -90,7 +87,6 @@
   100% { transform: rotate(360deg); }
 }
 
-/* Error Message */
 .error-container {
   background: #fee;
   border: 1px solid #fcc;
@@ -100,7 +96,6 @@
   margin: 1rem 0;
 }
 
-/* Success Message */
 .success-container {
   background: #efe;
   border: 1px solid #cfc;
@@ -110,7 +105,6 @@
   margin: 1rem 0;
 }
 
-/* Empty State */
 .empty-state {
   text-align: center;
   padding: 4rem 2rem;
