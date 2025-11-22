@@ -10,7 +10,6 @@ const PromptBrainPage = () => {
   const [editingPrompts, setEditingPrompts] = useState({});
   const [hasChanges, setHasChanges] = useState(false);
 
-  // loadPrompts defined before useEffect
   const loadPrompts = async (signal) => {
     try {
       const response = await promptAPI.getAllPrompts({ signal });
@@ -20,11 +19,9 @@ const PromptBrainPage = () => {
         initialEditing[prompt.name] = prompt.content;
       });
 
-      // update state
       setPrompts(response.data);
       setEditingPrompts(initialEditing);
     } catch (err) {
-      // Ignore abort errors
       if (err.name === 'AbortError') return;
       setError('Failed to load prompts');
       console.error(err);
@@ -34,8 +31,6 @@ const PromptBrainPage = () => {
   useEffect(() => {
     const controller = new AbortController();
 
-    // Schedule the async call so state updates don't occur synchronously inside the effect
-    // This avoids the "calling setState synchronously within an effect" warning
     Promise.resolve().then(() => loadPrompts(controller.signal));
 
     return () => controller.abort();
