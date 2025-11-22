@@ -454,6 +454,6 @@ git push origin main
 5. Open Pull Request
 
 
-## 👤 Author
+## Author
 
 Ayush Gupta
