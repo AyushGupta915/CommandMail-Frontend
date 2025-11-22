@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
 import { useEmail } from '../context/EmailContext';
+import { parseMarkdown } from '../services/parseMarkdown';
 import { agentAPI } from '../services/api';
 import { Send, Bot, User, Loader, Zap, Mail, Sparkles, MessageSquare } from 'lucide-react';
 import './AgentChatPage.css';
@@ -271,11 +272,11 @@ const AgentChatPage = () => {
                   )}
                 </div>
                 <div className="message-content">
-                  <div className="message-text">
-                    {message.content.split('\n').map((line, i) => (
-                      <p key={i}>{line || '\u00A0'}</p>
-                    ))}
-                  </div>
+                  {/* UPDATED: Use parseMarkdown to render formatted text */}
+                  <div 
+                    className="message-text"
+                    dangerouslySetInnerHTML={{ __html: parseMarkdown(message.content) }}
+                  />
                   <span className="message-time">
                     {message.timestamp.toLocaleTimeString('en-US', { 
                       hour: '2-digit', 
