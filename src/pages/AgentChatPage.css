@@ -545,3 +545,80 @@
   background: #dbeafe;
   color: #1e40af;
 }
+
+/* Markdown Styling */
+.message-text {
+  line-height: 1.7;
+}
+
+.message-text p {
+  margin: 0 0 0.75rem 0;
+}
+
+.message-text p:last-child {
+  margin-bottom: 0;
+}
+
+.message-text strong {
+  font-weight: 700;
+  color: inherit;
+}
+
+.message-text em {
+  font-style: italic;
+}
+
+.message-text ul,
+.message-text ol {
+  margin: 0.75rem 0;
+  padding-left: 1.5rem;
+}
+
+.message-text li {
+  margin: 0.5rem 0;
+  line-height: 1.6;
+}
+
+.message-text .inline-code {
+  background: rgba(0, 0, 0, 0.1);
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+  font-family: 'Courier New', monospace;
+  font-size: 0.9em;
+}
+
+.message.user .message-text .inline-code {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.message-text a {
+  color: #667eea;
+  text-decoration: underline;
+}
+
+.message-text a:hover {
+  color: #764ba2;
+}
+
+.message.user .message-text a {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.message-text h1,
+.message-text h2,
+.message-text h3 {
+  margin: 1rem 0 0.75rem 0;
+  font-weight: 700;
+}
+
+.message-text h1 {
+  font-size: 1.5em;
+}
+
+.message-text h2 {
+  font-size: 1.3em;
+}
+
+.message-text h3 {
+  font-size: 1.1em;
+}
